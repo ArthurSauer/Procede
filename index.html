@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho 2° Bimestre</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Trabalho 2° Bimestre</h1>
+    </header>
+
+    <nav class="navBar">
+        <button class="nav-btn active" onclick="openquest('home')">Home</button>
+        <button class="nav-btn" onclick="openquest('at1')">1. Triângulo</button>
+        <button class="nav-btn" onclick="openquest('at2')">2. IMC</button>
+        <button class="nav-btn" onclick="openquest('at3')">3. Impostos</button>
+        <button class="nav-btn" onclick="openquest('at4')">4. Salário</button>
+        <button class="nav-btn" onclick="openquest('at5')">5. Crédito</button>
+        <button class="nav-btn" onclick="openquest('at6')">6. Lanchonete</button>
+        <button class="nav-btn" onclick="openquest('at7')">7. Vendas</button>
+        <button class="nav-btn" onclick="openquest('at8')">8. Pagamento Prof</button>
+    </nav>
+
+    <main class="container">
+
+        <section class="quest active" id="home">
+            <h2>Fundamentos de Programação Web</h2>
+            <p>Selecione uma das atividades no menu superior para testar as resoluções dos exercícios.</p>
+        </section>
+
+        <section class="quest" id="at1">
+            <h2>Verificador de Triângulos</h2>
+    
+            <label>Lado X:</label>
+            <input type="number" id="ladoX"><br><br>
+
+            <label>Lado Y:</label>
+            <input type="number" id="ladoY"><br><br>
+
+            <label>Lado Z:</label>
+            <input type="number" id="ladoZ"><br><br>
+
+            <div class="btn-group">
+                <button class="btnSubmit" onclick="verificarTriangulo()">Verificar</button>
+                <button class="btnReset" onclick="limparCampos('at1')">Limpar</button>
+            </div>
+
+            <p id="resultadoTriangulo">Resultado</p>
+        </section>
+
+        <section class="quest" id="at2">
+            <h2>Calculadora IMC</h2>
+
+            <label>Peso (Kg):</label>
+            <input type="number" id="entraPeso" step="0.1"><br><br>
+
+            <label>Altura (m):</label>
+            <input type="number" id="entraAltura" step="0.01"><br><br>
+
+            <div class="btn-group">
+                <button class="btnSubmit" onclick="calcularIMC()">Calcular</button>
+                <button class="btnReset" onclick="limparCampos('at2')">Limpar</button>
+            </div>
+
+            <p id="resultadoIMC">Resultado</p>
+        </section>
+
+        <section class="quest" id="at3">
+            <h2>Calculadora de Impostos (DETRAN)</h2>
+
+            <label>Ano do Carro:</label>
+            <input type="number" id="anoCarro"><br><br>
+
+            <label>Valor Tabela:</label>
+            <input type="number" id="valorCarro" step="0.01"><br><br>
+
+            <div class="btn-group">
+                <button class="btnSubmit" onclick="calcularImposto()">Calcular Taxa</button>
+                <button class="btnReset" onclick="limparCampos('at3')">Limpar</button>
+            </div>
+
+            <p id="resultadoImposto">Resultado</p>
+        </section>
+
+        <section class="quest" id="at4">
+            <h2>Calculadora de Salário</h2>
+
+            <label>Salário Atual:</label>
+            <input type="number" id="salarioAtual" step="0.01"><br><br>
+
+            <label>Código Cargo:</label>
+            <input type="number" id="codigoCargo"><br><br>
+
+            <div class="btn-group">
+                <button class="btnSubmit" onclick="calcularAumentoSalario()">Calcular Novo Salário</button>
+                <button class="btnReset" onclick="limparCampos('at4')">Limpar</button>
+            </div>
+
+            <p id="resultadoSalario">Resultado</p>
+        </section>
+
+        <section class="quest" id="at5">
+            <h2>Crédito Bancário Especial</h2>
+
+            <label>Saldo Médio:</label>
+            <input type="number" id="saldoMedio" step="0.01"><br><br>
+
+            <div class="btn-group">
+                <button class="btnSubmit" onclick="calcularCredito()">Calcular Crédito</button>
+                <button class="btnReset" onclick="limparCampos('at5')">Limpar</button>
+            </div>
+
+            <p id="resultadoCredito">Resultado</p>
+        </section>
+
+        <section class="quest" id="at6">
+            <h2>Lanchonete - Pedido</h2>
+
+            <label>Cód. Produto:</label>
+            <input type="text" id="codLanche" placeholder="Ex: Bauru"><br><br>
+
+            <label>Quantidade:</label>
+            <input type="number" id="qtdLanche"><br><br>
+
+            <div class="btn-group">
+                <button class="btnSubmit" onclick="calcularLanchonete()">Fechar Item</button>
+                <button class="btnReset" onclick="limparCampos('at6')">Limpar</button>
+            </div>
+
+            <p id="resultadoLanche">Resultado</p>
+        </section>
+
+        <section class="quest" id="at7">
+            <h2>Sistema de Vendas</h2>
+
+            <label>Preço Etiqueta:</label>
+            <input type="number" id="precoEtiqueta" step="0.01"><br><br>
+
+            <label>Condição (a-d):</label>
+            <input type="text" id="condicaoPagamento" maxlength="1"><br><br>
+
+            <div class="btn-group">
+                <button class="btnSubmit" onclick="calcularVenda()">Calcular Total</button>
+                <button class="btnReset" onclick="limparCampos('at7')">Limpar</button>
+            </div>
+
+            <p id="resultadoVenda">Resultado</p>
+        </section>
+
+        <section class="quest" id="at8">
+            <h2>Sistema de Pagamento - Professores</h2>
+
+            <label>Nível (1 a 3):</label>
+            <input type="number" id="nivelProf"><br><br>
+
+            <label>Horas/Semana:</label>
+            <input type="number" id="horasAula"><br><br>
+
+            <div class="btn-group">
+                <button class="btnSubmit" onclick="calcularPagamentoProfessor()">Calcular Salário</button>
+                <button class="btnReset" onclick="limparCampos('at8')">Limpar</button>
+            </div>
+
+            <p id="resultadoProf">Resultado</p>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Kumar+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;}
+body{
+    font-family: "poppins", sans-serif;
+    background-color: #d4d4d4;
+    display: flex;
+    min-height: 100dvh;
+    flex-direction: column;}
+header{
+    width: 100%;
+    padding: 20px;
+    height: 80px;
+    text-align: center;
+    background-color: #333333;
+    font-family: "poppins", sans-serif;
+    color: #fff;
+    font-size: 15px;}
+.navBar{
+    background-color: #d4d4d4;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;}
+.nav-btn{
+    font-family: "poppins", sans-serif;
+    background-color: #888888;
+    color: #fff;
+    width: 150px;
+    border: 1px solid silver;
+    padding: 13px 10px;
+    cursor: pointer;
+    font-size: 15px;
+    text-align: center;
+    transition: 0.3s;}
+.nav-btn:hover{
+    background-color: #666;}
+.nav-btn.active{
+    background-color: #ff0000;}
+.container{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;}
+.quest{
+    display: none;
+    background-color: #aeadad;
+    color: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+    box-shadow: 0px 5px 20px -7px black;
+    border: 2px solid #888;}
+.quest.active{
+    display: block;}
+input{
+    width: 100%;
+    max-width: 160px;
+    height: 40px;
+    margin-left: 20px;
+    border-radius: 7px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    outline: none;}
+input::placeholder {
+    color: #ddd;
+    font-size: 14px;
+    font-weight: 400;}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;}
+.quest h2{
+    padding: 0px 0px 30px 0px;}
+.quest label{
+    font-size: 18px;
+    display: inline-block;
+    width: 150px;
+    text-align: right;}
+p{
+    padding: 20px;
+    font-size: larger;
+    font-weight: 500;}
+.btn-group {
+    margin-top: 20px;
+    display: block;
+    text-align: center;}
+.btnSubmit, .btnReset {
+    width: 160px;
+    padding: 10px 10px;
+    border-radius: 6px;
+    font-family: "poppins", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    display: inline-block;
+    margin: 5px 10px;
+    box-shadow: 0px 5px 20px -10px black;}
+.btnSubmit {
+    background-color: #ff0000;
+    border: 2px solid #888;
+    color: #fff;}
+.btnSubmit:hover {
+    background-color: #cc0000;}
+.btnReset {
+    background-color: #555555;
+    border: 2px solid #444;
+    color: #fff;}
+.btnReset:hover {
+    background-color: #333333;}
